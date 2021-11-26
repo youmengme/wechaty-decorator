@@ -9,7 +9,7 @@ import {
 } from 'wechaty'
 import { MessageType } from 'wechaty-puppet'
 import {
-  Wechaty,
+  WechatyDecorator,
   onRoomJoin,
   OnRoomInvite,
   OnRoomLeave,
@@ -17,7 +17,7 @@ import {
   OnScan,
   OnLogin,
   OnMessage,
-} from '../../dist/src/'
+} from '../index'
 
 function log(...data) {
   console.log(...data)
@@ -29,7 +29,7 @@ class Test {
       token: process.env.WECHATY_PUPPET_TOKEN || 'YOUR_PUPPET_TOKEN'
     })
 
-    new Wechaty({
+    new WechatyDecorator({
       name: 'wendiaodiao',
       puppet,
     })

@@ -37,7 +37,7 @@ import {
 } from 'wechaty'
 import { MessageType } from 'wechaty-puppet'
 import {
-  Wechaty,
+  WechatyDecorator,
   onRoomJoin,
   OnRoomInvite,
   OnRoomLeave,
@@ -57,7 +57,7 @@ class Example {
       token: "YOU_TOKEN"
     })
 
-    new Wechaty({
+    new WechatyDecorator({
       name: 'YOUR_BOT_NAME',
       puppet,
     })

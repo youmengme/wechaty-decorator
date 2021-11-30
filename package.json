@@ -1,7 +1,8 @@
 {
   "name": "wechaty-decorator",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
   "license": "MIT",
   "scripts": {
     "start": "nodemon",
@@ -20,6 +21,9 @@
   },
   "devDependencies": {
     "wechaty-puppet-padlocal": "^0.2.31",
-    "wechaty-weixin-openai": "^0.2.10"
+    "wechaty-weixin-openai": "^0.2.10",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^18.0.1"
   }
 }

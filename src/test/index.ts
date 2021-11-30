@@ -1,22 +1,17 @@
 import 'dotenv/config'
-
-import { PuppetPadlocal } from 'wechaty-puppet-padlocal'
+import {VoteOut} from './plugins/wechaty-voteout'
+import {PuppetPadlocal} from 'wechaty-puppet-padlocal'
+import {Contact, Message, Room, ScanStatus} from 'wechaty'
+import {MessageType} from 'wechaty-puppet'
 import {
-  ScanStatus,
-  Message,
-  Room,
-  Contact,
-} from 'wechaty'
-import { MessageType } from 'wechaty-puppet'
-import {
-  WechatyDecorator,
-  onRoomJoin,
+  OnLogin,
+  OnMessage,
   OnRoomInvite,
+  onRoomJoin,
   OnRoomLeave,
   OnRoomTopic,
   OnScan,
-  OnLogin,
-  OnMessage,
+  WechatyDecorator
 } from '../index'
 
 function log(...data) {
@@ -26,13 +21,19 @@ class Test {
   constructor() {
     log('Test Instance')
     const puppet = new PuppetPadlocal({
-      token: process.env.WECHATY_PUPPET_TOKEN || 'YOUR_PUPPET_TOKEN'
+      token: process.env.WECHATY_PUPPET_TOKEN
     })
 
-    new WechatyDecorator({
-      name: 'wendiaodiao',
-      puppet,
-    })
+    new WechatyDecorator(
+      {
+        name: 'wendiaodiao',
+        puppet
+      },
+      [VoteOut({
+        room: [/^Crawlab/i, /^测试/i]
+      })
+      ]
+    )
   }
 
   @OnScan

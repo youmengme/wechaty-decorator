@@ -1,0 +1,25 @@
+{
+    "name": "wechaty-decorator",
+    "version": "0.0.4",
+    "main": "./dist/src/index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "nodemon",
+        "build": "tsc",
+        "dev": "tsc --watch"
+    },
+    "dependencies": {
+        "brolog": "^1.14.2",
+        "dotenv": "^10.0.0",
+        "events": "^3.3.0",
+        "reflect-metadata": "^0.1.13",
+        "rxjs": "^7.4.0",
+        "typescript": "^4.4.4",
+        "qrcode-terminal": "^0.12.0",
+        "wechaty": "^0.56.6"
+    },
+    "devDependencies": {
+        "wechaty-puppet-padlocal": "^0.2.31",
+        "wechaty-weixin-openai": "^0.2.10"
+    }
+}

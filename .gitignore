@@ -119,4 +119,3 @@ out
 ./**/*.map
 .env
 .idea
-dist
